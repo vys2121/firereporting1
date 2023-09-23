@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '5fv_1886ls8mb8fm^8mnniq=8z0)_jv(@4k6g7(czfmv82wxnz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['firereporting.azurewebsites.net']
 
 
 # Application definition
