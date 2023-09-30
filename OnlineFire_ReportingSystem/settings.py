@@ -74,7 +74,7 @@ DATABASES = {
         'OPTIONS': {'ssl': True}
     }
 }
-
+CSRF_TRUSTED_ORIGINS = ['https://firereporting12.azurewebsites.net']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
