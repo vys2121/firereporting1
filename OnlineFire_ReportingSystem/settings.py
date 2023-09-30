@@ -14,7 +14,7 @@ SECRET_KEY = '5fv_1886ls8mb8fm^8mnniq=8z0)_jv(@4k6g7(czfmv82wxnz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['firereporting.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,7 +44,7 @@ ROOT_URLCONF = 'OnlineFire_ReportingSystem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,8 +65,13 @@ WSGI_APPLICATION = 'OnlineFire_ReportingSystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'firereporting',
+        'USER': 'aditya',
+        'PASSWORD': 'firereporting@1',
+        'HOST': 'adityamysql.mysql.database.azure.com',
+        'PORT': '3306',
+        'OPTIONS': {'ssl': True}
     }
 }
 
@@ -109,6 +114,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
